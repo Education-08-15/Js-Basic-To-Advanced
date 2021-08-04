@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Object</title>
+    <style>
+      body {
+        background: #2a364f;
+      }
+      h1 {
+        text-align: center;
+        color: white;
+      }
+      .credit {
+        text-align: center;
+        color: grey;
+      }
+      .content {
+        padding-top: 45px;
+        padding-bottom: 20px;
+      }
+      .button_container {
+        width: 176px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding-top: 40px;
+      }
+      .button_su {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        box-shadow: 0px 10px 8px -8px black;
+        cursor: pointer;
+      }
+
+      .su_button_circle {
+        background-color: red;
+        border-radius: 1000px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        margin-left: 0px;
+        margin-top: 0px;
+        pointer-events: none;
+      }
+      .button_su_inner {
+        display: inline-block;
+        background: #d6d62e;
+        color: aliceblue;
+        font-size: 16px;
+        font-weight: normal;
+        width: 132px;
+        text-align: center;
+        border-radius: 3px;
+        transition: 400ms;
+        text-decoration: none;
+        padding: 22px;
+        z-index: 100000;
+      }
+
+      .button_text_container {
+        position: relative;
+        z-index: 10000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>let's see what is an Event Object</h1>
+      <div class="button_container">
+        <div class="button_su">
+          <span class="su_button_circle"></span>
+          <a href="#" class="button_su_inner" id="fourthWay">
+            <span class="button_text_container"> Event Listeners</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      const fourthWay = document.getElementById('fourthWay');
+      const checkEvent = () => {
+        console.log(event);
+        console.log(event.target);
+        console.log(event.type);
+        console.log(event.timeStamp);
+      };
+      fourthWay.addEventListener('click', checkEvent);
+    </script>
+  </body>
+</html>
