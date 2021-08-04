@@ -9,3 +9,13 @@
 ### control statements and loops
 
 ### functions
+
+### DOM
+
+### Array
+
+### String
+
+### Math
+
+### Date & Time
