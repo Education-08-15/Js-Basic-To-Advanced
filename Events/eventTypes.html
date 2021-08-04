@@ -112,9 +112,30 @@
     </div>
 
     <script>
+      //2nd Way of writing function
       const callingFunction = () => {
         alert('Most common way of writing functions');
       };
+
+      //3rd Way of writing function
+      const thirdWay = document.getElementById('thirdWay');
+      thirdWay.onclick = () => {
+        alert('most common way of writing function again');
+      };
+      //this method overrites the first called function and runs the function called at last
+      thirdWay.onclick = () => {
+        console.log('most common way of writing function again');
+      };
+
+      // 4th Way of writing function
+      const fourthWay = document.querySelector('#fourthWay');
+      fourthWay.addEventListener('click', () => {
+        alert('I love this way of writing function');
+      });
+      // this method does not overwrites the function and are called synchronously
+      fourthWay.addEventListener('click', () => {
+        console.log('I love this way of writing function');
+      });
     </script>
   </body>
 </html>
