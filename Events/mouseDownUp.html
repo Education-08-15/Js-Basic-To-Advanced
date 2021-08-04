@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse DownUp Event</title>
+  </head>
+  <style>
+    * {
+      margin: 2px auto;
+      padding: 4px;
+      background-color: grey;
+      font-size: 25px;
+    }
+  </style>
+  <body>
+    <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+      Click the text! The mouseDown() function is triggered when the mouse
+      button is pressed down over this paragrph,and sets the color of the text
+      to red. The mouseUp() function is triggered when the mouse button is
+      released and sets the color of the text to green.
+    </p>
+
+    <script>
+      const mouseDown = () => {
+        document.getElementById('myP').style.color = 'red';
+      };
+      const mouseUp = () => {
+        document.getElementById('myP').style.color = 'green';
+      };
+    </script>
+  </body>
+</html>
