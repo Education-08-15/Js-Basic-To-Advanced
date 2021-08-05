@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeOut</title>
+    <style>
+      button {
+        display: inline-block;
+        background: #f8b627;
+        color: white;
+        font-size: 12px;
+        font-weight: normal;
+        text-align: center;
+        border-radius: 3px;
+        transition: 400ms;
+        text-decoration: none;
+        padding: 5px 10px;
+        z-index: 100000;
+        outline: none;
+        border: none;
+        box-shadow: rgb(41, 36, 36);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div className="main-div">
+      <div>
+        <p>Want to know my name</p>
+        <p id="showMyName"></p>
+        <br />
+        <button id="btn">Click here</button>
+      </div>
+    </div>
+    <script>
+      const myName = document.querySelector('#showMyName');
+      const btn = document.querySelector('#btn');
+
+      const showMyName = () => {
+        myName.innerHTML = 'Loading';
+        setTimeout(() => {
+          myName.innerHTML = 'Shikshya Gautam';
+        }, 2000);
+      };
+      btn.addEventListener('click', showMyName);
+    </script>
+  </body>
+</html>
