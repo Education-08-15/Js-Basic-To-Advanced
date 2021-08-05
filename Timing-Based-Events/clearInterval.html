@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval</title>
+    <style>
+      button {
+        display: inline-block;
+        background: #f8b627;
+        color: white;
+        font-size: 12px;
+        font-weight: normal;
+        text-align: center;
+        border-radius: 3px;
+        transition: 400ms;
+        text-decoration: none;
+        padding: 5px 10px;
+        z-index: 100000;
+        outline: none;
+        border: none;
+        box-shadow: rgb(41, 36, 36);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div>
+        <p>can you stop me when i reach at 5 ?</p>
+
+        <br />
+        <button id="btn1">Start</button>
+        <button id="btn2">Stop</button>
+      </div>
+    </div>
+    <script>
+      const stopNum = document.querySelector('p');
+      const btn1 = document.querySelector('#btn1');
+      const stopInterval = document.querySelector('#btn2');
+      let timeRef;
+      let num = 0;
+      const showMyNum = () => {
+        stopNum.innerHTML = 'Loading';
+        timeRef = setInterval(() => {
+          stopNum.innerHTML = `${num}`;
+          num++;
+        }, 1000);
+      };
+      btn1.addEventListener('click', showMyNum);
+
+      stopInterval.addEventListener('click', () => {
+        clearInterval(timeRef);
+      });
+    </script>
+  </body>
+</html>
